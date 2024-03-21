@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { SubHeading } from "../components/SubHeading";
-import { BottomWarning } from "../components/BottomWarning";
+import { SubHeading } from "../components/Auth/SubHeading";
+import { BottomWarning } from "../components/Auth/BottomWarning";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { HeadingLogin } from "../components/HeadingLogin";
-import { InputBoxLogin } from "../components/InputBoxLogin";
-import { ButtonLogin } from "../components/ButtonLogin";
+import { HeadingLogin } from "../components/Auth/HeadingLogin";
+import { InputBoxLogin } from "../components/Auth/InputBoxLogin";
+import { ButtonLogin } from "../components/Auth/ButtonLogin";
 export function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
