@@ -5,7 +5,7 @@ import { Signup } from './pages/Signup';
 import { Signin } from './pages/Signin';
 import { LandingPage } from './pages/LandingPage';
 import { ExpiredFood } from './pages/ExpiredFood';
-
+import NonExpired from './pages/NonExpired/NonExpired'
 function App() {
   return (
     <>
@@ -17,6 +17,8 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/foodsurplus/expired" element={<ExpiredFood/>}/>
+        <Route path="/foodsurplus/nonexpired" element={<NonExpired/>}/>
+
       </Routes>
     </BrowserRouter>
     </>
