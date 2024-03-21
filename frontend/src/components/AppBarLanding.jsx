@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/Surplo_Logo.jpeg";
 
@@ -6,6 +6,11 @@ import "./AppBarLanding.css"; // Import custom CSS for styling
 
 export function AppBarLanding() {
   const navigate = useNavigate();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <header className="app-bar flex justify-between px-4 py-2 h-14">
@@ -15,9 +20,28 @@ export function AppBarLanding() {
       </div>
 
       <nav className="flex gap-8">
-      <a href="#features" className="mt-2 hover:underline">Features</a>
-        <a href="#about" className="mt-2 hover:underline">About Us</a>
-        <a href="#Support" className="mt-2 hover:underline">Support</a>
+      <div className="dropdown">
+          <button className="font-medium rounded-lg text-md px-1 py-2 me-1 mb-2  focus:outline-none hover:text-secondary-400 border-none" onClick={toggleDropdown}>
+            Food Surplus
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-content">
+              <a href="#">Expired</a>
+              <a href="#">Non-Expired</a>
+              <a href="#">Subscription</a>
+              <a href="#">Industrial Symbios</a>
+            </div>
+          )}
+        </div>
+        <a href="#features" className="mt-2 hover:underline">
+          Features
+        </a>
+        <a href="#about" className="mt-2 hover:underline">
+          About Us
+        </a>
+        <a href="#Support" className="mt-2 hover:underline">
+          Support
+        </a>
         <button
           className="btn btn-primary bg-primary-500 hover:bg-secondary-400"
           onClick={() => navigate("/signin")}

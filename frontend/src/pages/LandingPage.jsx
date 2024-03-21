@@ -11,8 +11,8 @@ export function LandingPage(){
     return<div className="">
         <AppBarLanding/>
         <HeroSection/>
-        <FeaturesSection/>
         <CallToAction/>
+        <FeaturesSection/>
         <AboutUs/>
         <Footer/>
         
