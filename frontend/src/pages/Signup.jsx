@@ -33,7 +33,7 @@ export function Signup() {
   }, []);
   
   return (
-    <div className="flex h-screen bg-background justify-center bg-text-800">
+    <div className="flex h-screen bg-background justify-center bg-text-200">
       <div className="flex flex-col justify-center">
         <div className="rounded-lg bg-primary-300 text-center h-max w-96 px-4 p-2">
           <HeadingLogin label={"Sign Up"} />

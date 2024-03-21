@@ -17,7 +17,7 @@
   
   .container {
     position: relative;
-    z-index: 2; /* Ensure the content is above the background */
+    z-index: 2; 
   }
   
   .text-4xl {

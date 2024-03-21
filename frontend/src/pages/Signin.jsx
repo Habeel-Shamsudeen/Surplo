@@ -34,9 +34,9 @@ export function Signin() {
     
   }
   return (
-    <div className="flex h-screen justify-center bg-text-800">
+    <div className="flex h-screen justify-center bg-text-200">
       <div className="flex flex-col justify-center">
-        <div className="rounded-lg bg-white text-center h-max w-80 px-4 p-2 bg-accent bg-primary-300">
+        <div className="rounded-lg bg-white text-center h-max w-80 px-4 p-2 bg-accent bg-primary-300 shadow-md">
           <HeadingLogin label={"Sign In"} />
           <SubHeading label={"Enter your credentials to access your account"} />
           <InputBoxLogin
