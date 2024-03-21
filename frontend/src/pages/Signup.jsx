@@ -25,7 +25,7 @@ export function Signup() {
           }
         );
         if(response.data.loggedIn){
-          navigate('/home');
+          navigate('/foodsurplus/expired');
         }
       } catch (err) {}
     }

@@ -23,16 +23,12 @@ export function Signin() {
           }
         );
         if(response.data.loggedIn){
-          navigate('/home');
+          navigate('/foodsurplus/expired');
         }
       } catch (err) {}
     }
     getMyData();
   }, []);
-
-  const login=()=>{
-    
-  }
   return (
     <div className="flex h-screen justify-center bg-text-200">
       <div className="flex flex-col justify-center">
@@ -63,7 +59,7 @@ export function Signin() {
                 }
               );
               localStorage.setItem("token", response.data.token);
-              navigate("/home");
+              navigate('/foodsurplus/expired');
             } catch (err) {
               alert(err.response.data.message);
             }

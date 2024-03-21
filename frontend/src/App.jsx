@@ -4,6 +4,7 @@ import './App.css'
 import { Signup } from './pages/Signup';
 import { Signin } from './pages/Signin';
 import { LandingPage } from './pages/LandingPage';
+import { ExpiredFood } from './pages/ExpiredFood';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/landing" element={<LandingPage />} />
-        {/* <Route path="postjob" element={<PostJob/>}/> */}
+        <Route path="/foodsurplus/expired" element={<ExpiredFood/>}/>
       </Routes>
     </BrowserRouter>
     </>
