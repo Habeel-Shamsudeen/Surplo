@@ -40,6 +40,7 @@ function FeaturesSection() {
             <li className="text-accent-500 text-bold">No.Of Bags/Month: {feature.no_of_bags}</li>
             <li className="text-accent-500 text-bold">No.Of Collections/trips: {feature.no_of_collection}</li>
             <button className="text-text-900 bg-text-500 hover:bg-secondary-500 font-medium rounded-lg text-md px-5 py-2 me-2 mb-2 w-full focus:outline-none focus:ring-1 focus:ring-slate-900">₹{feature.price}</button>
+            <button className="btn mt-8 bg-accent-500" onClick={() => window.open("https://forms.gle/RKG8n2G6Xz1okRwp6", '_blank')}>Get Started</button>
           </div>
         ))}
       </div>

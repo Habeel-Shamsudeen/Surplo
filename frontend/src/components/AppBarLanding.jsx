@@ -12,6 +12,18 @@ export function AppBarLanding() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const subheadings = [
+    { text: "Expired", path: "/foodsurplus/expired" },
+    { text: "Non-Expired", path: "/foodsurplus/non-expired" },
+    { text: "Subscription", path: "/foodsurplus/subscription" },
+    { text: "Industrial Symbiosis", path: "/foodsurplus/industrial-symbiosis" },
+  ];
+
+  const handleSubheadingClick = (subheading) => {
+    navigate(subheading.path);
+    setIsDropdownOpen(false); // Close dropdown after navigation
+  };
+
   return (
     <header className="app-bar flex justify-between px-4 py-2 h-14">
       <div className="flex items-center">
@@ -20,16 +32,21 @@ export function AppBarLanding() {
       </div>
 
       <nav className="flex gap-8">
-      <div className="dropdown">
+        <div className="dropdown">
           <button className="font-medium rounded-lg text-md px-1 py-2 me-1 mb-2  focus:outline-none hover:text-secondary-400 border-none" onClick={toggleDropdown}>
             Food Surplus
           </button>
           {isDropdownOpen && (
             <div className="dropdown-content">
-              <a href="#">Expired</a>
-              <a href="#">Non-Expired</a>
-              <a href="#">Subscription</a>
-              <a href="#">Industrial Symbios</a>
+              {subheadings.map((subheading) => (
+                <a
+                  key={subheading.text} // Add key for better performance
+                  className="hover:bg-text-300"
+                  onClick={() => handleSubheadingClick(subheading)}
+                >
+                  {subheading.text}
+                </a>
+              ))}
             </div>
           )}
         </div>
