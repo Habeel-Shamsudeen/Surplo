@@ -13,7 +13,7 @@ export function DashHeader({ heading }) {
       </div>
       <span
         style={{ textAlign: "center", width: "100%", fontSize: "2em" }}
-        className="text-xl font-semibold"
+        className="text-xl font-semibold raleway-regular"
       >
         {heading}
       </span>
