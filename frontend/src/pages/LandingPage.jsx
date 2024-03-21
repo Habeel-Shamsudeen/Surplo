@@ -3,6 +3,7 @@ import { AppBarLanding } from "../components/AppBarLanding";
 import HeroSection from "../components/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import Footer from "../components/Footer";
+import AboutUs from "../components/AboutUs";
 
 export function LandingPage(){
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ export function LandingPage(){
         <AppBarLanding/>
         <HeroSection/>
         <FeaturesSection/>
+        <AboutUs/>
         <Footer/>
         
     </div>
