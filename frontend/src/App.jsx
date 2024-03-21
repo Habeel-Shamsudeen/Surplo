@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import './App.css'
 import { Signup } from './pages/Signup';
 import { Signin } from './pages/Signin';
+import { LandingPage } from './pages/LandingPage';
 
 function App() {
   return (
@@ -10,11 +11,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/" element={<LandingPage/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
-        {/* <Route path="/home" element={<Home />} />
-        <Route path="postjob" element={<PostJob/>}/> */}
+        <Route path="/landing" element={<LandingPage />} />
+        {/* <Route path="postjob" element={<PostJob/>}/> */}
       </Routes>
     </BrowserRouter>
     </>

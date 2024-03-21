@@ -29,6 +29,10 @@ export function Signin() {
     }
     getMyData();
   }, []);
+
+  const login=()=>{
+    
+  }
   return (
     <div className="flex h-screen justify-center bg-text-800">
       <div className="flex flex-col justify-center">

@@ -41,6 +41,21 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+const expiredFoodSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+});
+
 userSchema.methods.createHash = async (plain_password) => {
   const salt = 10;
   return await bcrypt.hash(plain_password, salt);
@@ -51,6 +66,9 @@ userSchema.methods.validatePassword = async function (candidatePassword) {
 };
 const User = mongoose.model("User", userSchema);
 
+const ExpiredFood = mongoose.model("ExpiredFood",expiredFoodSchema);
+
 module.exports = {
   User,
+  ExpiredFood
 };
