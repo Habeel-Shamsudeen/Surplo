@@ -1,11 +1,21 @@
 import React from "react";
 import "./Card.css";
+import assured from "../assets/assured.jpeg";
 
-const Card = ({ data, onChat, onShowNumber, showNumber }) => {
+const Card = ({ data, onChat, onShowNumber, showNumber, extra }) => {
   return (
-    <div className="card">
+    <div className="card mt-3">
       <img src={data.imageUrl} alt="Food" className="card__image" />
       <div className="card__container">
+        <div className="flex gap-3">
+          <h3 className="font-bold">{data.title}</h3>
+          {data.assured ? (
+            <img src={assured} className="h-9 w-19" />
+          ) : (
+            <div></div>
+          )}
+        </div>
+
         <h4>
           <b className="josefin-slab card-title">
             {data.numberOfPlates} Plates
@@ -68,10 +78,17 @@ const Card = ({ data, onChat, onShowNumber, showNumber }) => {
         >
           {showNumber ? data.phoneNumber : "Show number"}
         </button>
-
-        <button style={{ fontFamily: "monospace", fontSize: "1.2em" }}>
-          Donate
-        </button>
+        {data.assured ? (
+          <button style={{ fontFamily: "monospace", fontSize: "1.2em" }} onClick={()=>{
+            window.open("https://youtu.be/83dhSpTURf8?si=1CHooBB_KO20gVu-")
+          }}>
+            Learn more
+          </button>
+        ) : (
+          <button style={{ fontFamily: "monospace", fontSize: "1.2em" }} >
+            {extra}
+          </button>
+        )}
       </div>
     </div>
   );

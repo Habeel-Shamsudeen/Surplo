@@ -14,7 +14,7 @@ export function AppBarLanding() {
 
   const subheadings = [
     { text: "Expired", path: "/foodsurplus/expired" },
-    { text: "Non-Expired", path: "/foodsurplus/non-expired" },
+    { text: "Non-Expired", path: "/foodsurplus/nonexpired" },
     { text: "Subscription", path: "/foodsurplus/subscription" },
     { text: "Industrial Symbiosis", path: "/foodsurplus/industrial-symbiosis" },
   ];

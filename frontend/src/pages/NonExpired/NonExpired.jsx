@@ -3,6 +3,9 @@ import Card from "../../components/Card";
 import dummyData from "../../assets/dummy_non_expired";
 import "./NonExpired.css";
 import { DashHeader } from "../../components/DashHeader";
+import { useEffect } from "react"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NonExpired = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -14,11 +17,32 @@ const NonExpired = () => {
   const handleChat = () => {
     // Handle chat functionality here
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+      async function getMyData() {
+        try {
+          const response = await axios.get(
+            "http://localhost:3000/api/v1/user/me",
+            {
+              headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+              },
+            }
+          );
+          if(response.data.loggedIn){
+            
+          }
+        } catch (err) {
+          navigate('/signin')
+        }
+      }
+      getMyData();
+    }, []);
 
   return (
     <>
       <DashHeader heading="Non Expired" />
-      <div className="non-expired">
+      <div className="non-expired bg-primary-100">
         <div className="cards">
           {dummyData.map((data, index) => (
             <Card
@@ -27,6 +51,7 @@ const NonExpired = () => {
               onChat={handleChat}
               onShowNumber={() => handleShowNumber(index)}
               showNumber={selectedCard === index}
+              extra={'donate'}
             />
           ))}
         </div>
