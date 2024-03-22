@@ -34,6 +34,14 @@ export function DashHeader() {
             {link.text}
           </button>
         ))}
+             <button
+            className="btn btn-primary bg-primary-500 hover:bg-purple-400 px-4 py-2 rounded-md text-md focus:outline-none"
+            onClick={() => {localStorage.clear('token')
+            navigate('/landing')
+          }}
+          >
+            Logout
+          </button>
       </nav>
     </header>
   );
