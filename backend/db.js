@@ -54,7 +54,36 @@ const expiredFoodSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  imageUrl: {
+    type: String,
+    required: false, // Optional image URL for the food item
+  },
+  category: {
+    type: String,
+    required: true, // Categorize food items (e.g., fruits, vegetables, dairy)
+  },
+  unit: {
+    type: String,
+    required: false, // Unit for quantity (e.g., pieces, kilograms, liters)
+  },
+  expiryDate: {
+    type: Date,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: false, // Optional location details (e.g., storage area)
+  },
+  phoneNumber: {
+    type: String,
+    required: false, // Optional phone number for contact
+  },
+  creationDate: {
+    type: Date,
+    default: Date.now, // Automatically set on item creation
+  },
 });
+
 
 userSchema.methods.createHash = async (plain_password) => {
   const salt = 10;
