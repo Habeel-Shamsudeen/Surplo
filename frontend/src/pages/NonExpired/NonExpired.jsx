@@ -14,8 +14,16 @@ const NonExpired = () => {
     setSelectedCard(index);
   };
 
-  const handleChat = () => {
-    // Handle chat functionality here
+  const handleChat = (phoneNumber) => {
+    try {
+      const encodedPhoneNumber = encodeURIComponent(phoneNumber);
+      const url = `https://wa.me/${encodedPhoneNumber}`;
+      window.open(url, "_blank"); // Open in a new tab
+    } catch (error) {
+      console.error("Error opening WhatsApp chat:", error);
+      // Handle errors elegantly for a better user experience
+      alert("Something went wrong. Please ensure WhatsApp is installed on your device.");
+    }
   };
   const navigate = useNavigate();
   useEffect(() => {

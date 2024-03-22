@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import "./Card.css"; // Import your CSS file
+import "./Card.css";
 import assured from "../assets/assured.jpeg";
+import { Popup } from "./Popup";
 
 const Card = ({ data, onChat, onShowNumber, showNumber, extra }) => {
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
-
+  const [trigger,setTrigger] = useState(false)
   return (
     <div className="card mt-3">
       <img src={data.imageUrl} alt="Food" className="card__image" />
@@ -53,6 +49,7 @@ const Card = ({ data, onChat, onShowNumber, showNumber, extra }) => {
                 paddingLeft: "1em",
               }}
             >
+              {""}
               {data.creationDate}
             </span>
           </p>
@@ -90,40 +87,11 @@ const Card = ({ data, onChat, onShowNumber, showNumber, extra }) => {
             Learn more
           </button>
         ) : (
-          <button
-            style={{ fontFamily: "monospace", fontSize: "1.2em" }}
-            onClick={() => setShowPopup(true)}
-          >
+          <button style={{ fontFamily: "monospace", fontSize: "1.2em" }} onClick={()=>setTrigger(e=>!e)}>
             {extra}
           </button>
         )}
-
-        {showPopup && (
-          <div className="popup">
-            <h4>Popup Title</h4>
-            <button
-              type="button"
-              onClick={() => {
-                // handle first button action
-                handlePopupClose();
-              }}
-            >
-              Button 1
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                // handle second button action
-                handlePopupClose();
-              }}
-            >
-              Button 2
-            </button>
-            <span className="popup__close" onClick={handlePopupClose}>
-              &times;
-            </span>
-          </div>
-        )}
+        <Popup trigger={trigger}></Popup>
       </div>
     </div>
   );
