@@ -28,7 +28,7 @@ export function AppBarLanding() {
     <header className="app-bar flex justify-between px-4 py-2 h-14">
       <div className="flex items-center">
         <img src={logo} alt="Surplo Logo" className="rounded-full h-11 mr-4" />
-        <h1 className="text-xl font-semibold">Surplo</h1>
+        <h1 className="text-xl font-semibold" onClick={()=>navigate('/')}>Surplo</h1>
       </div>
 
       <nav className="flex gap-8">
