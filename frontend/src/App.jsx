@@ -6,6 +6,7 @@ import { Signin } from './pages/Signin';
 import { LandingPage } from './pages/LandingPage';
 import { ExpiredFood } from './pages/ExpiredFood';
 import NonExpired from './pages/NonExpired/NonExpired'
+import { IndustrialSymbiosis } from './pages/IndustrialSymbiosis';
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/landing" element={<LandingPage />} />
         <Route path="/foodsurplus/expired" element={<ExpiredFood/>}/>
         <Route path="/foodsurplus/nonexpired" element={<NonExpired/>}/>
+        <Route path="/industrialsymbiosis" element={<IndustrialSymbiosis/>}/>
 
       </Routes>
     </BrowserRouter>

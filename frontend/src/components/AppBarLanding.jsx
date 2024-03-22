@@ -16,7 +16,7 @@ export function AppBarLanding() {
     { text: "Expired", path: "/foodsurplus/expired" },
     { text: "Non-Expired", path: "/foodsurplus/nonexpired" },
     { text: "Subscription", path: "/foodsurplus/subscription" },
-    { text: "Industrial Symbiosis", path: "/foodsurplus/industrial-symbiosis" },
+    { text: "Industrial Symbiosis", path: "/industrialsymbiosis" },
   ];
 
   const handleSubheadingClick = (subheading) => {

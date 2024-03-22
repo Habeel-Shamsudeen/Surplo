@@ -9,7 +9,7 @@ export function DashHeader() {
   const navigationLinks = [
     { text: "Expired Food", path: "/foodsurplus/expired" },
     { text: "Non-Expired Food", path: "/foodsurplus/nonexpired" },
-    { text: "Industrial Symbiosis", path: "/foodsurplus/industrialsymbiosis" },
+    { text: "Industrial Symbiosis", path: "/industrialsymbiosis" },
     { text: "Company Services", path: "/company-services" }, // Add path for company services
   ];
 
