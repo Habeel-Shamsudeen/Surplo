@@ -10,7 +10,7 @@ export function DashHeader() {
     { text: "Expired Food", path: "/foodsurplus/expired" },
     { text: "Non-Expired Food", path: "/foodsurplus/nonexpired" },
     { text: "Industrial Symbiosis", path: "/industrialsymbiosis" },
-    { text: "Company Services", path: "/company-services" }, // Add path for company services
+    { text: "Company Services", path: "/companyservices" }, // Add path for company services
   ];
 
   const handleNavigationClick = (link) => {
