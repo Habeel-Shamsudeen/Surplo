@@ -11,7 +11,7 @@ export function IndustrialSymbiosis(){
         async function getMyData() {
           try {
             const response = await axios.get(
-              "http://localhost:3000/api/v1/user/me",
+              "https://surplo-api.vercel.app/api/v1/user/me",
               {
                 headers: {
                   Authorization: "Bearer " + localStorage.getItem("token"),

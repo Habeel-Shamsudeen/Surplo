@@ -15,7 +15,7 @@ export function Signin() {
     async function getMyData() {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/user/me",
+          "https://surplo-api.vercel.app/api/v1/user/me",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
@@ -52,7 +52,7 @@ export function Signin() {
           onClick={async () => {
             try {
               const response = await axios.post(
-                "http://localhost:3000/api/v1/user/signin",
+                "https://surplo-api.vercel.app/api/v1/user/signin",
                 {
                   email,
                   password,
